@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" width="100%" height="100%">
+  <rect width="200" height="150" fill="#ffffff"/>
+  <!-- asianpaints logo stylized text -->
+  <text x="100" y="70" font-family="'Helvetica Neue', 'Arial', sans-serif" font-weight="700" font-size="22" fill="#E31E24" text-anchor="middle" letter-spacing="-0.5">asian<tspan fill="#005A9C">paints</tspan></text>
+  <text x="100" y="100" font-family="'Inter', sans-serif" font-weight="800" font-size="14" fill="#222222" text-anchor="middle">Asian Paints</text>
+  <text x="100" y="115" font-family="'Inter', sans-serif" font-weight="500" font-size="7.5" fill="#666666" text-anchor="middle" letter-spacing="0.5">PAINTS &amp; FINISHES</text>
+</svg>

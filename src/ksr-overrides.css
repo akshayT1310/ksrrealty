@@ -1,0 +1,511 @@
+/* =========================================================
+   KSR REALTY - FINAL RESPONSIVE / LARGE SCREEN FIX
+   Add this at the VERY END of your CSS
+========================================================= */
+
+/* ---------------------------------------------------------
+   ROOT
+--------------------------------------------------------- */
+
+:root {
+  --ksr-header-h: 114px;
+
+  --color-paper: #f8f5ee;
+  --color-ink: #101828;
+  --color-navy: #0a192f;
+  --color-navy-deep: #07111e;
+  --color-brass: #b9974e;
+  --color-slate: #b4bdd0;
+  --color-taupe: #6b7280;
+  --color-limestone: #f6f3ee;
+  --color-hairline: #ece8df;
+
+  --radius: 20px;
+  --radius-sm: 12px;
+
+  --shadow-card: 0 14px 40px rgba(0, 0, 0, 0.08);
+  --shadow-lift: 0 22px 60px rgba(0, 0, 0, 0.16);
+
+  --font-display: "Outfit", Georgia, serif;
+}
+
+
+/* ---------------------------------------------------------
+   GLOBAL
+--------------------------------------------------------- */
+
+html {
+  width: 100%;
+  min-width: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-width: 100%;
+  margin: 0;
+  padding-top: var(--ksr-header-h);
+  overflow-x: hidden;
+  background: #050d1a;
+}
+
+#root {
+  width: 100%;
+  min-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* ---------------------------------------------------------
+   MAIN CONTAINER
+   OLD: 1180px
+   NEW: 1380px
+--------------------------------------------------------- */
+
+.container-trs {
+  width: min(1380px, calc(100% - 64px));
+  max-width: 1380px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* ---------------------------------------------------------
+   LARGE DESKTOP CONTAINER
+--------------------------------------------------------- */
+
+@media (min-width: 1600px) {
+  .container-trs {
+    width: min(1480px, calc(100% - 80px));
+    max-width: 1480px;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   HERO - GENERAL
+--------------------------------------------------------- */
+
+.hero-section,
+.hero,
+section.hero {
+  width: 100%;
+  max-width: none;
+}
+
+
+/* Hero background image */
+
+.hero-section img,
+.hero img {
+  max-width: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   HERO TYPOGRAPHY
+--------------------------------------------------------- */
+
+.hero-section h1,
+.hero h1 {
+  font-family: var(--font-display);
+}
+
+
+/* Desktop hero heading */
+
+@media (min-width: 1201px) {
+  .hero-section h1,
+  .hero h1 {
+    font-size: clamp(3.8rem, 5.2vw, 6rem);
+    line-height: 0.98;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   HERO SEARCH / FORM
+--------------------------------------------------------- */
+
+.hero-section form,
+.hero form {
+  width: 100%;
+  max-width: 900px;
+}
+
+
+/* ---------------------------------------------------------
+   ALL MAIN SECTIONS
+--------------------------------------------------------- */
+
+section {
+  width: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   SECTION VERTICAL SPACING
+--------------------------------------------------------- */
+
+.section-y {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+
+/* ---------------------------------------------------------
+   FEATURED / CARDS
+--------------------------------------------------------- */
+
+.grid {
+  max-width: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   WHATSAPP
+--------------------------------------------------------- */
+
+.floating-whatsapp {
+  right: 22px;
+  bottom: 22px;
+  z-index: 99999;
+}
+
+
+/* =========================================================
+   SEARCH PAGE
+========================================================= */
+
+.search-layout {
+  width: 100%;
+}
+
+.search-result-card {
+  width: 100%;
+}
+
+
+/* =========================================================
+   CONTACT PAGE
+========================================================= */
+
+.contact-main-section .container-trs {
+  width: min(1380px, calc(100% - 64px));
+  max-width: 1380px;
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  :root {
+    --ksr-header-h: 90px;
+  }
+
+  body {
+    padding-top: var(--ksr-header-h);
+  }
+
+  .container-trs {
+    width: min(100% - 48px, 1100px);
+  }
+
+  .section-y {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .search-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .search-map-panel {
+    position: static;
+  }
+
+  .search-result-card {
+    grid-template-columns: 260px minmax(0, 1fr);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  :root {
+    --ksr-header-h: 76px;
+  }
+
+  body {
+    padding-top: var(--ksr-header-h);
+  }
+
+  .container-trs {
+    width: calc(100% - 40px);
+    max-width: 100%;
+  }
+
+  .section-y {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
+  .search-result-card {
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+
+  .about-kicker-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-page-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .about-stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-luxury-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  :root {
+    --ksr-header-h: 66px;
+  }
+
+  body {
+    padding-top: var(--ksr-header-h);
+  }
+
+  .container-trs {
+    width: calc(100% - 32px);
+    max-width: 100%;
+  }
+
+  .section-y {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+
+  /* Hero */
+
+  .hero-section,
+  .hero,
+  section.hero {
+    min-height: 620px;
+  }
+
+  .hero-section h1,
+  .hero h1 {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+    line-height: 1;
+  }
+
+  .hero-section p,
+  .hero p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+
+  /* Search */
+
+  .search-layout {
+    display: block;
+  }
+
+  .search-result-card {
+    grid-template-columns: 1fr;
+  }
+
+  .search-card-image {
+    min-height: 230px;
+  }
+
+  .search-card-body {
+    padding: 18px;
+  }
+
+
+  /* About */
+
+  .about-kicker-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-content-band ul {
+    grid-template-columns: 1fr;
+  }
+
+  .about-contact-strip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+
+  /* Contact */
+
+  .contact-page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-luxury-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form {
+    max-width: 100%;
+  }
+
+  .contact-form-card {
+    padding: 25px;
+  }
+
+
+  /* WhatsApp */
+
+  .floating-whatsapp {
+    right: 14px;
+    bottom: 14px;
+    padding: 12px 14px;
+  }
+
+  .floating-whatsapp span {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  :root {
+    --ksr-header-h: 64px;
+  }
+
+  body {
+    padding-top: var(--ksr-header-h);
+  }
+
+  .container-trs {
+    width: calc(100% - 24px);
+  }
+
+  .section-y {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+
+  /* Hero */
+
+  .hero-section,
+  .hero,
+  section.hero {
+    min-height: 650px;
+  }
+
+  .hero-section h1,
+  .hero h1 {
+    font-size: 2.45rem;
+    line-height: 1.02;
+  }
+
+  .hero-section p,
+  .hero p {
+    font-size: 0.85rem;
+  }
+
+
+  /* About */
+
+  .about-stat-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .about-stat-grid div {
+    padding: 14px;
+  }
+
+  .about-stat-grid strong {
+    font-size: 1.45rem;
+  }
+
+
+  /* Search */
+
+  .search-card-title-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .search-card-price {
+    text-align: left;
+  }
+
+
+  /* Contact */
+
+  .contact-main-section {
+    padding: 60px 0 70px;
+  }
+
+  .contact-form-card {
+    padding: 20px;
+    border-radius: 18px;
+  }
+}
+
+
+/* =========================================================
+   VERY LARGE SCREEN
+========================================================= */
+
+@media (min-width: 1800px) {
+
+  .container-trs {
+    width: min(1520px, calc(100% - 100px));
+    max-width: 1520px;
+  }
+
+  .section-y {
+    padding-top: 110px;
+    padding-bottom: 110px;
+  }
+
+  .hero-section h1,
+  .hero h1 {
+    font-size: 6rem;
+  }
+}
+

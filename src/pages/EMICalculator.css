@@ -1,0 +1,1098 @@
+/* =========================================================
+   KSR REALTY
+   EMI CALCULATOR
+   PREMIUM LIGHT / EDITORIAL
+========================================================= */
+
+.emi-page {
+  --emi-navy: #07172b;
+  --emi-navy-soft: #13253c;
+  --emi-gold: #bd9848;
+  --emi-gold-dark: #a98238;
+  --emi-paper: #f6f3eb;
+  --emi-card: #eee8da;
+  --emi-result: #e5dbc3;
+  --emi-line: #d1ccc1;
+  --emi-muted: #817b70;
+
+  width: 100%;
+  min-height: 100vh;
+
+  background: var(--emi-paper);
+
+  color: var(--emi-navy);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.emi-hero {
+  position: relative;
+
+  padding:
+    115px
+    25px
+    95px;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(189, 152, 72, 0.11),
+      transparent 38%
+    ),
+    var(--emi-paper);
+
+  text-align: center;
+}
+
+.emi-hero::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(7, 23, 43, 0.018) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(7, 23, 43, 0.018) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+
+  pointer-events: none;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 90%
+    );
+}
+
+.emi-hero-inner {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 760px;
+
+  margin: 0 auto;
+}
+
+.emi-eyebrow {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 13px;
+
+  margin-bottom: 17px;
+
+  color: var(--emi-gold);
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+}
+
+.emi-eyebrow span {
+  width: 28px;
+  height: 1px;
+
+  background: var(--emi-gold);
+}
+
+.emi-hero h1 {
+  margin: 0;
+
+  color: var(--emi-navy);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(42px, 6vw, 72px);
+
+  line-height: 0.98;
+
+  font-weight: 500;
+
+  letter-spacing: -0.045em;
+}
+
+.emi-hero h1 em {
+  color: var(--emi-gold);
+
+  font-style: normal;
+}
+
+.emi-hero p {
+  max-width: 600px;
+
+  margin:
+    24px
+    auto
+    0;
+
+  color: #727a86;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   CALCULATOR SECTION
+========================================================= */
+
+.emi-section {
+  position: relative;
+
+  padding:
+    30px
+    30px
+    110px;
+}
+
+.emi-container {
+  width: min(
+    100%,
+    1180px
+  );
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   TWO COLUMN
+========================================================= */
+
+.emi-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(280px, 0.72fr)
+    minmax(480px, 1.28fr);
+
+  align-items: center;
+
+  gap: 90px;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.emi-intro {
+  padding-left: 12px;
+}
+
+.emi-section-number {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--emi-gold);
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+}
+
+.emi-section-label {
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: #747b84;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+.emi-intro h2 {
+  margin: 0;
+
+  color: var(--emi-navy);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(34px, 4vw, 51px);
+
+  line-height: 1.03;
+
+  font-weight: 500;
+
+  letter-spacing: -0.04em;
+}
+
+.emi-intro h2 em {
+  color: var(--emi-gold);
+
+  font-style: normal;
+}
+
+.emi-intro > p {
+  max-width: 390px;
+
+  margin:
+    25px
+    0
+    36px;
+
+  color: #727a86;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   INFO LIST
+========================================================= */
+
+.emi-info-list {
+  border-top: 1px solid #ddd8ce;
+}
+
+.emi-info-item {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 17px;
+
+  padding:
+    17px
+    0;
+
+  border-bottom:
+    1px solid #ddd8ce;
+}
+
+.emi-info-item > span {
+  color: var(--emi-gold);
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+.emi-info-item div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.emi-info-item strong {
+  color: var(--emi-navy);
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.emi-info-item small {
+  color: #89857c;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   CALCULATOR CARD
+========================================================= */
+
+.emi-card {
+  position: relative;
+
+  padding:
+    34px;
+
+  background:
+    rgba(238, 232, 218, 0.94);
+
+  border:
+    1px solid #d9d2c3;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 25px 70px
+    rgba(35, 29, 17, 0.07);
+
+  backdrop-filter: blur(10px);
+}
+
+.emi-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  width: 100px;
+  height: 2px;
+
+  background: var(--emi-gold);
+
+  transform:
+    translateX(-50%);
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.emi-card-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+}
+
+.emi-card-header h3 {
+  margin: 0;
+
+  color: var(--emi-navy);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 24px;
+
+  font-weight: 500;
+
+  letter-spacing: -0.025em;
+}
+
+.emi-card-header span {
+  padding:
+    7px
+    11px;
+
+  border:
+    1px solid
+    rgba(189, 152, 72, 0.35);
+
+  border-radius: 999px;
+
+  color: var(--emi-gold-dark);
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.emi-control {
+  margin-bottom: 24px;
+}
+
+.emi-control-top {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 9px;
+}
+
+.emi-control-top label {
+  color: #7c776e;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 400;
+}
+
+.emi-control-top strong {
+  color: var(--emi-navy);
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   RANGE
+========================================================= */
+
+.emi-range {
+  width: 100%;
+
+  height: 6px;
+
+  display: block;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  outline: none;
+
+  cursor: pointer;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      to right,
+      var(--emi-gold)
+      0%,
+      var(--emi-gold)
+      var(--progress),
+      var(--emi-line)
+      var(--progress),
+      var(--emi-line)
+      100%
+    );
+}
+
+
+/* Chrome */
+
+.emi-range::-webkit-slider-runnable-track {
+  height: 6px;
+
+  border-radius: 999px;
+
+  background: transparent;
+}
+
+.emi-range::-webkit-slider-thumb {
+  width: 16px;
+  height: 16px;
+
+  margin-top: -5px;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: var(--emi-gold);
+
+  box-shadow:
+    0 2px 8px
+    rgba(100, 75, 25, 0.18);
+
+  transition:
+    transform 0.2s ease;
+}
+
+.emi-range:hover::-webkit-slider-thumb {
+  transform: scale(1.15);
+}
+
+
+/* Firefox */
+
+.emi-range::-moz-range-track {
+  height: 6px;
+
+  border: 0;
+
+  border-radius: 999px;
+
+  background: var(--emi-line);
+}
+
+.emi-range::-moz-range-progress {
+  height: 6px;
+
+  border-radius: 999px;
+
+  background: var(--emi-gold);
+}
+
+.emi-range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: var(--emi-gold);
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   RANGE VALUES
+========================================================= */
+
+.emi-range-values {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 7px;
+
+  color: #aaa49a;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   RESULT
+========================================================= */
+
+.emi-result {
+  margin-top: 4px;
+
+  padding:
+    22px;
+
+  background:
+    var(--emi-result);
+
+  border-radius: 16px;
+}
+
+.emi-result-label {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #817a6d;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 11px;
+}
+
+.emi-amount {
+  color: var(--emi-gold);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 34px;
+
+  line-height: 1.1;
+
+  font-weight: 500;
+
+  letter-spacing: -0.035em;
+}
+
+
+/* =========================================================
+   RESULT DETAILS
+========================================================= */
+
+.emi-result-details {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 25px;
+
+  margin-top: 14px;
+}
+
+.emi-result-details div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+}
+
+.emi-result-details span {
+  color: #827c71;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 9px;
+}
+
+.emi-result-details strong {
+  color: #8a7650;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.emi-button {
+  width: 100%;
+
+  min-height: 53px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  margin-top: 20px;
+
+  border: 0;
+
+  border-radius: 14px;
+
+  background: var(--emi-gold);
+
+  color: var(--emi-navy);
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.emi-button b {
+  font-size: 15px;
+
+  font-weight: 500;
+}
+
+.emi-button:hover {
+  background: #c6a052;
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 13px 30px
+    rgba(145, 105, 30, 0.2);
+}
+
+.emi-button:active {
+  transform:
+    translateY(0);
+}
+
+
+/* =========================================================
+   DISCLAIMER
+========================================================= */
+
+.emi-disclaimer {
+  margin:
+    12px
+    0
+    0;
+
+  text-align: center;
+
+  color: #989186;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 8px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   BOTTOM CTA
+========================================================= */
+
+.emi-bottom {
+  padding:
+    95px
+    25px
+    110px;
+
+  background: var(--emi-navy);
+
+  text-align: center;
+}
+
+.emi-bottom-inner {
+  max-width: 650px;
+
+  margin: 0 auto;
+}
+
+.emi-bottom span {
+  color: var(--emi-gold);
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+.emi-bottom h2 {
+  margin:
+    17px
+    0
+    30px;
+
+  color: #f8f5ed;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(36px, 5vw, 58px);
+
+  line-height: 1;
+
+  font-weight: 500;
+
+  letter-spacing: -0.04em;
+}
+
+.emi-bottom h2 em {
+  color: var(--emi-gold);
+
+  font-style: normal;
+}
+
+.emi-bottom a {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding:
+    14px
+    20px;
+
+  border:
+    1px solid
+    rgba(189, 152, 72, 0.5);
+
+  border-radius: 999px;
+
+  color: #eee8da;
+
+  text-decoration: none;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.emi-bottom a b {
+  color: var(--emi-gold);
+
+  font-size: 15px;
+}
+
+.emi-bottom a:hover {
+  background: var(--emi-gold);
+
+  color: var(--emi-navy);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .emi-layout {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+
+    max-width: 720px;
+
+    margin: 0 auto;
+  }
+
+  .emi-intro {
+    padding-left: 0;
+
+    text-align: center;
+  }
+
+  .emi-intro > p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .emi-info-list {
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    text-align: left;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .emi-hero {
+    padding:
+      80px
+      18px
+      65px;
+  }
+
+  .emi-eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 0.13em;
+  }
+
+  .emi-eyebrow span {
+    width: 20px;
+  }
+
+  .emi-hero h1 {
+    font-size: 43px;
+  }
+
+  .emi-hero p {
+    font-size: 13px;
+  }
+
+  .emi-section {
+    padding:
+      20px
+      14px
+      75px;
+  }
+
+  .emi-layout {
+    gap: 40px;
+  }
+
+  .emi-intro h2 {
+    font-size: 36px;
+  }
+
+  .emi-card {
+    padding:
+      26px
+      18px
+      20px;
+
+    border-radius: 17px;
+  }
+
+  .emi-card-header {
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+  .emi-card-header h3 {
+    font-size: 21px;
+  }
+
+  .emi-card-header span {
+    font-size: 7px;
+  }
+
+  .emi-control {
+    margin-bottom: 23px;
+  }
+
+  .emi-result {
+    padding: 18px;
+  }
+
+  .emi-amount {
+    font-size: 30px;
+  }
+
+  .emi-result-details {
+    gap: 12px;
+  }
+
+  .emi-result-details div {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 2px;
+  }
+
+  .emi-bottom {
+    padding:
+      70px
+      20px
+      80px;
+  }
+
+  .emi-bottom h2 {
+    font-size: 39px;
+  }
+
+}
