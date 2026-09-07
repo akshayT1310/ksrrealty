@@ -668,10 +668,7 @@ export default function FounderDesk() {
 
           margin: 0;
 
-          font-family:
-            Georgia,
-            "Times New Roman",
-            serif;
+          font-family: var(--font-display);
 
           font-size:
             clamp(

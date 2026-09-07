@@ -2,29 +2,41 @@
    KSR REALTY VENTURES
    END-TO-END CONSTRUCTION PAGE
    LIGHT LUXURY / EDITORIAL / PREMIUM
-   CURVED UI VERSION
+   CURVED UI
+   UPDATED TYPOGRAPHY
 ========================================================= */
 
 .construction-page {
-  --construction-paper: #f5f2eb;
+  --construction-paper: #f6f2ea;
   --construction-white: #fffdf8;
-  --construction-soft: #ebe7de;
-  --construction-line: rgba(25, 25, 22, 0.14);
+  --construction-soft: #ebe4d8;
+
+  --construction-line: rgba(38, 34, 27, 0.13);
   --construction-line-light: rgba(255, 255, 255, 0.2);
-  --construction-ink: #171714;
-  --construction-muted: #6c6a64;
-  --construction-dark: #1c1c19;
-  --construction-accent: #b08b52;
 
-  background: var(--construction-paper);
-  color: var(--construction-ink);
+  --construction-ink: #1b1a17;
+  --construction-muted: #746f65;
+  --construction-muted-light: #928b7e;
 
-  font-family:
-    Inter,
+  --construction-dark: #20201c;
+
+  /* Luxury Gold */
+  --construction-accent: #a88755;
+  --construction-accent-dark: #927340;
+  --construction-accent-soft: rgba(168, 135, 85, 0.12);
+
+  /* Body Font */
+  --construction-body:
+    "Inter",
     "Helvetica Neue",
     Helvetica,
     Arial,
     sans-serif;
+
+  background: var(--construction-paper);
+  color: var(--construction-ink);
+
+  font-family: var(--construction-body);
 
   overflow: hidden;
 }
@@ -33,6 +45,36 @@
 .construction-page *::before,
 .construction-page *::after {
   box-sizing: border-box;
+}
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+.construction-page img {
+  max-width: 100%;
+}
+
+.construction-page a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.construction-page button {
+  font-family: inherit;
+}
+
+/* =========================================================
+   ALL HEADINGS
+   USE GLOBAL DISPLAY FONT
+========================================================= */
+
+.construction-page h1,
+.construction-page h2,
+.construction-page h3,
+.construction-page h4,
+.construction-page h5,
+.construction-page h6 {
+  font-family: var(--font-display);
 }
 
 /* =========================================================
@@ -71,7 +113,8 @@
   position: absolute;
   inset: 0;
 
-  background-image: url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2200&q=95");
+  background-image:
+    url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2200&q=95");
 
   background-position: center;
   background-size: cover;
@@ -92,14 +135,14 @@
   background:
     linear-gradient(
       90deg,
-      rgba(10, 10, 9, 0.82) 0%,
-      rgba(10, 10, 9, 0.54) 42%,
-      rgba(10, 10, 9, 0.12) 100%
+      rgba(10, 10, 9, 0.84) 0%,
+      rgba(10, 10, 9, 0.58) 40%,
+      rgba(10, 10, 9, 0.16) 100%
     ),
     linear-gradient(
       0deg,
-      rgba(8, 8, 7, 0.55),
-      transparent 45%
+      rgba(8, 8, 7, 0.58),
+      transparent 48%
     );
 }
 
@@ -107,7 +150,7 @@
   position: absolute;
   inset: 0;
 
-  opacity: 0.12;
+  opacity: 0.1;
 
   background-image:
     linear-gradient(
@@ -134,15 +177,20 @@
 .construction-eyebrow {
   display: flex;
   align-items: center;
+
   gap: 14px;
 
   margin-bottom: 28px;
 
   font-size: 10px;
+
   letter-spacing: 0.28em;
+
   font-weight: 600;
 
   text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.86);
 }
 
 .construction-eyebrow span {
@@ -161,26 +209,29 @@
 ========================================================= */
 
 .construction-hero h1 {
-  max-width: 900px;
+  max-width: 920px;
 
   margin: 0;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: var(--font-display);
 
-  font-size: clamp(64px, 8vw, 122px);
-  line-height: 0.9;
+  font-size: clamp(70px, 8.5vw, 130px);
 
-  font-weight: 400;
+  line-height: 0.82;
 
-  letter-spacing: -0.055em;
+  font-weight: 500;
+
+  letter-spacing: -0.045em;
+
+  color: #fffdf8;
 }
 
 .construction-hero h1 em {
   font-style: italic;
+
   font-weight: 400;
+
+  color: #e7d8bd;
 }
 
 /* =========================================================
@@ -192,10 +243,13 @@
 
   margin: 42px 0 0;
 
+  font-family: var(--construction-body);
+
   font-size: 15px;
+
   line-height: 1.8;
 
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 0.76);
 }
 
 /* =========================================================
@@ -205,6 +259,7 @@
 .construction-hero-actions {
   display: flex;
   align-items: center;
+
   gap: 34px;
 
   margin-top: 38px;
@@ -223,18 +278,22 @@
 
   gap: 24px;
 
-  padding: 0 24px;
+  padding: 0 25px;
 
   border: 1px solid transparent;
 
-  border-radius: 14px;
+  border-radius: 999px;
 
   text-decoration: none;
 
-  font-size: 11px;
+  font-family: var(--construction-body);
+
+  font-size: 10px;
+
   letter-spacing: 0.14em;
 
   text-transform: uppercase;
+
   font-weight: 600;
 
   cursor: pointer;
@@ -243,11 +302,14 @@
     transform 0.3s ease,
     background 0.3s ease,
     color 0.3s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .construction-button span {
   font-size: 18px;
+
+  transition: transform 0.3s ease;
 }
 
 .construction-button:hover {
@@ -257,9 +319,22 @@
     0 14px 35px rgba(0, 0, 0, 0.14);
 }
 
+.construction-button:hover span {
+  transform: translateX(3px);
+}
+
 .construction-button-dark {
-  background: #fffdf7;
-  color: #181816;
+  background: #b09261;
+
+  color: #fffdf8;
+
+  border-color: #b09261;
+}
+
+.construction-button-dark:hover {
+  background: #967744;
+
+  border-color: #967744;
 }
 
 /* =========================================================
@@ -276,16 +351,23 @@
 
   text-decoration: none;
 
+  font-family: var(--construction-body);
+
   font-size: 10px;
+
   letter-spacing: 0.16em;
 
   text-transform: uppercase;
 
-  transition: opacity 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    gap 0.3s ease;
 }
 
 .construction-text-link:hover {
-  opacity: 0.7;
+  opacity: 0.72;
+
+  gap: 16px;
 }
 
 .construction-text-link span {
@@ -298,6 +380,7 @@
 
 .construction-hero-bottom {
   position: absolute;
+
   z-index: 4;
 
   left: 50%;
@@ -313,15 +396,17 @@
   gap: 20px;
 
   font-size: 9px;
+
   letter-spacing: 0.2em;
 
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.68);
 }
 
 .construction-hero-line {
   position: relative;
 
   height: 1px;
+
   width: 90px;
 
   background: rgba(255, 255, 255, 0.25);
@@ -329,11 +414,12 @@
 
 .construction-hero-line span {
   position: absolute;
+
   inset: 0 auto 0 0;
 
   width: 30%;
 
-  background: #fff;
+  background: var(--construction-accent);
 }
 
 /* =========================================================
@@ -346,12 +432,17 @@
 
   gap: 12px;
 
+  font-family: var(--font-display);
+
   font-size: 9px;
+
   font-weight: 700;
 
   letter-spacing: 0.2em;
 
-  color: #65635d;
+  color: #656158;
+
+  text-transform: uppercase;
 }
 
 .construction-section-label span {
@@ -383,9 +474,10 @@
 }
 
 .construction-intro-small {
-  color: #929087;
+  color: #928b7e;
 
   font-size: 9px;
+
   letter-spacing: 0.15em;
 
   text-transform: uppercase;
@@ -404,22 +496,45 @@
 .construction-intro-grid h2 {
   margin: 0;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: var(--font-display);
 
-  font-size: clamp(48px, 6vw, 82px);
+  font-size: clamp(52px, 6vw, 86px);
 
-  font-weight: 400;
+  font-weight: 500;
 
-  line-height: 0.98;
+  line-height: 0.91;
 
-  letter-spacing: -0.05em;
+  letter-spacing: -0.045em;
+
+  color: var(--construction-ink);
 }
 
 .construction-intro-grid h2 em {
   font-style: italic;
+
+  color: var(--construction-accent-dark);
+}
+
+/* =========================================================
+   FIRST LETTER — INTRO
+========================================================= */
+
+.construction-intro-copy p:first-of-type::first-letter {
+  float: left;
+
+  margin-top: 8px;
+
+  padding-right: 10px;
+
+  font-family: var(--font-display);
+
+  font-size: 72px;
+
+  line-height: 0.68;
+
+  font-weight: 500;
+
+  color: var(--construction-accent);
 }
 
 .construction-intro-copy {
@@ -433,10 +548,16 @@
 
   color: var(--construction-muted);
 
-  font-size: 15px;
+  font-family: var(--construction-body);
 
-  line-height: 1.85;
+  font-size: 14px;
+
+  line-height: 1.9;
 }
+
+/* =========================================================
+   ARROW LINK
+========================================================= */
 
 .construction-arrow-link {
   display: inline-flex;
@@ -465,6 +586,8 @@
 
 .construction-arrow-link:hover {
   gap: 22px;
+
+  color: var(--construction-accent-dark);
 }
 
 .construction-arrow-link span {
@@ -492,7 +615,9 @@
 
   border-right: 1px solid rgba(255, 255, 255, 0.12);
 
-  transition: background 0.3s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 
 .construction-stat:hover {
@@ -512,20 +637,21 @@
 
   margin-bottom: 10px;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: var(--font-display);
 
-  font-size: 48px;
+  font-size: 54px;
 
-  font-weight: 400;
+  font-weight: 500;
+
+  line-height: 0.95;
 
   letter-spacing: -0.04em;
+
+  color: #fffdf8;
 }
 
 .construction-stat span {
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.52);
 
   font-size: 9px;
 
@@ -544,7 +670,7 @@
   background:
     radial-gradient(
       circle at 90% 10%,
-      rgba(176, 139, 82, 0.08),
+      rgba(176, 139, 82, 0.09),
       transparent 30%
     ),
     var(--construction-paper);
@@ -564,23 +690,24 @@
 .construction-project-heading h2 {
   margin: 32px 0 0;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: var(--font-display);
 
-  font-size: clamp(48px, 5vw, 76px);
+  font-size: clamp(52px, 5vw, 80px);
 
-  line-height: 0.98;
+  line-height: 0.91;
 
-  font-weight: 400;
+  font-weight: 500;
 
-  letter-spacing: -0.05em;
+  letter-spacing: -0.045em;
+
+  color: var(--construction-ink);
 }
 
 .construction-section-heading h2 em,
 .construction-project-heading h2 em {
   font-style: italic;
+
+  color: var(--construction-accent-dark);
 }
 
 .construction-section-heading > p {
@@ -594,7 +721,7 @@
 
   font-size: 14px;
 
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
 /* =========================================================
@@ -610,7 +737,7 @@
 }
 
 /* =========================================================
-   SERVICE CARD — CURVED
+   SERVICE CARD
 ========================================================= */
 
 .construction-service-card {
@@ -633,10 +760,10 @@
 .construction-service-card:hover {
   transform: translateY(-9px);
 
-  border-color: rgba(176, 139, 82, 0.2);
+  border-color: rgba(176, 139, 82, 0.24);
 
   box-shadow:
-    0 30px 70px rgba(20, 20, 18, 0.10);
+    0 30px 70px rgba(20, 20, 18, 0.1);
 }
 
 /* =========================================================
@@ -672,14 +799,15 @@
 
 .construction-service-image-overlay {
   position: absolute;
+
   inset: 0;
 
   background:
     linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.18),
+      rgba(0, 0, 0, 0.16),
       transparent 40%,
-      rgba(0, 0, 0, 0.28)
+      rgba(0, 0, 0, 0.3)
     );
 }
 
@@ -706,7 +834,7 @@
 
   color: #fff;
 
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.1);
 
   backdrop-filter: blur(8px);
 
@@ -755,16 +883,17 @@
 .construction-service-content h3 {
   margin: 0 0 15px;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: var(--font-display);
 
-  font-size: 30px;
+  font-size: 32px;
 
-  font-weight: 400;
+  font-weight: 500;
+
+  line-height: 1;
 
   letter-spacing: -0.025em;
+
+  color: var(--construction-ink);
 }
 
 .construction-service-content p {
@@ -776,7 +905,7 @@
 
   font-size: 13px;
 
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
 /* =========================================================
@@ -791,6 +920,7 @@
   width: 100%;
 
   margin-top: 28px;
+
   padding: 15px 0 0;
 
   border: 0;
@@ -818,9 +948,263 @@
   transition: transform 0.3s ease;
 }
 
+.construction-service-link:hover {
+  color: var(--construction-accent-dark);
+}
+
 .construction-service-link:hover span {
   transform: translateX(5px);
 }
+
+/* =========================================================
+   PROJECT GALLERY
+   PREMIUM 3 x 2 GRID
+========================================================= */
+
+.construction-gallery {
+  padding: 125px 0 135px;
+
+  background: var(--construction-white);
+}
+
+/* =========================================================
+   GALLERY HEADING
+========================================================= */
+
+.construction-gallery-heading {
+  text-align: center;
+
+  margin-bottom: 38px;
+}
+
+.construction-gallery-eyebrow {
+  margin-bottom: 12px;
+
+  font-family: var(--font-display);
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.28em;
+
+  color: var(--construction-muted);
+
+  text-transform: uppercase;
+}
+
+.construction-gallery-heading h2 {
+  margin: 0;
+
+  font-family: var(--font-display);
+
+  font-size: clamp(46px, 5vw, 68px);
+
+  line-height: 0.95;
+
+  font-weight: 500;
+
+  letter-spacing: -0.045em;
+
+  color: var(--construction-ink);
+}
+
+.construction-gallery-heading h2 em {
+  font-style: italic;
+
+  font-weight: 400;
+
+  color: var(--construction-accent);
+}
+
+.construction-gallery-heading p {
+  margin: 13px auto 0;
+
+  max-width: 430px;
+
+  color: var(--construction-muted);
+
+  font-family: var(--construction-body);
+
+  font-size: 11px;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   GALLERY GRID
+========================================================= */
+
+.construction-gallery-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 9px;
+}
+
+/* =========================================================
+   GALLERY IMAGE
+========================================================= */
+
+.construction-gallery-item {
+  position: relative;
+
+  height: 155px;
+
+  overflow: hidden;
+
+  border-radius: 13px;
+
+  background: #ddd;
+
+  cursor: pointer;
+}
+
+.construction-gallery-item img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 0.5s ease;
+}
+
+.construction-gallery-item:hover img {
+  transform: scale(1.07);
+
+  filter: brightness(0.9);
+}
+
+/* =========================================================
+   SUBTLE HOVER OVERLAY
+========================================================= */
+
+.construction-gallery-item::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 55%,
+      rgba(0, 0, 0, 0.18)
+    );
+
+  opacity: 0;
+
+  transition: opacity 0.4s ease;
+
+  pointer-events: none;
+}
+
+.construction-gallery-item:hover::after {
+  opacity: 1;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .construction-gallery {
+    padding: 100px 0 110px;
+  }
+
+  .construction-gallery-grid {
+    gap: 8px;
+  }
+
+  .construction-gallery-item {
+    height: 135px;
+
+    border-radius: 12px;
+  }
+
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .construction-gallery {
+    padding: 85px 0 90px;
+  }
+
+  .construction-gallery-heading {
+    margin-bottom: 30px;
+  }
+
+  .construction-gallery-eyebrow {
+    font-size: 7px;
+
+    letter-spacing: 0.25em;
+  }
+
+  .construction-gallery-heading h2 {
+    font-size: 48px;
+
+    line-height: 0.92;
+  }
+
+  .construction-gallery-heading p {
+    max-width: 300px;
+
+    margin-top: 11px;
+
+    font-size: 10px;
+  }
+
+  .construction-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 8px;
+  }
+
+  .construction-gallery-item {
+    height: 145px;
+
+    border-radius: 12px;
+  }
+
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .construction-gallery {
+    padding: 75px 0 80px;
+  }
+
+  .construction-gallery-heading h2 {
+    font-size: 43px;
+  }
+
+  .construction-gallery-grid {
+    gap: 7px;
+  }
+
+  .construction-gallery-item {
+    height: 125px;
+
+    border-radius: 10px;
+  }
+
+}
+
 
 /* =========================================================
    QUALITY SECTION
@@ -843,9 +1227,11 @@
 
 .construction-quality-image {
   position: absolute;
+
   inset: 0;
 
-  background-image: url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2200&q=90");
+  background-image:
+    url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2200&q=90");
 
   background-position: center;
 
@@ -854,13 +1240,14 @@
 
 .construction-quality-overlay {
   position: absolute;
+
   inset: 0;
 
   background:
     linear-gradient(
       90deg,
-      rgba(15, 15, 14, 0.86),
-      rgba(15, 15, 14, 0.35)
+      rgba(15, 15, 14, 0.88),
+      rgba(15, 15, 14, 0.34)
     );
 }
 
@@ -875,22 +1262,23 @@
 
   margin: 40px 0 100px;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: var(--font-display);
 
-  font-size: clamp(55px, 7vw, 105px);
+  font-size: clamp(60px, 7vw, 110px);
 
-  font-weight: 400;
+  font-weight: 500;
 
-  line-height: 0.9;
+  line-height: 0.86;
 
-  letter-spacing: -0.055em;
+  letter-spacing: -0.05em;
+
+  color: #fffdf8;
 }
 
 .construction-quality-content h2 em {
   font-style: italic;
+
+  color: #dfcba8;
 }
 
 .construction-quality-bottom {
@@ -910,7 +1298,7 @@
 
   margin: 0;
 
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.68);
 
   font-size: 13px;
 
@@ -926,14 +1314,13 @@
 }
 
 .construction-quality-mark span {
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: var(--font-display);
 
-  font-size: 38px;
+  font-size: 40px;
 
   line-height: 1;
+
+  color: #fffdf8;
 }
 
 .construction-quality-mark small {
@@ -942,6 +1329,8 @@
   font-size: 7px;
 
   letter-spacing: 0.2em;
+
+  color: rgba(255, 255, 255, 0.5);
 }
 
 /* =========================================================
@@ -967,22 +1356,23 @@
 .construction-process-heading h2 {
   margin: 30px 0 0;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: var(--font-display);
 
-  font-size: clamp(55px, 6vw, 88px);
+  font-size: clamp(58px, 6vw, 92px);
 
-  line-height: 0.92;
+  line-height: 0.88;
 
-  font-weight: 400;
+  font-weight: 500;
 
-  letter-spacing: -0.055em;
+  letter-spacing: -0.05em;
+
+  color: var(--construction-ink);
 }
 
 .construction-process-heading h2 em {
   font-style: italic;
+
+  color: var(--construction-accent-dark);
 }
 
 .construction-process-list {
@@ -1009,6 +1399,7 @@
 
 .construction-process-item:hover {
   padding-left: 15px;
+
   padding-right: 15px;
 
   background: var(--construction-paper);
@@ -1025,16 +1416,15 @@
 .construction-process-title h3 {
   margin: 0;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: var(--font-display);
 
-  font-size: 30px;
+  font-size: 32px;
 
-  font-weight: 400;
+  font-weight: 500;
 
   letter-spacing: -0.02em;
+
+  color: var(--construction-ink);
 }
 
 .construction-process-description p {
@@ -1064,6 +1454,8 @@
   border: 1px solid var(--construction-line);
 
   border-radius: 50%;
+
+  color: var(--construction-ink);
 
   font-size: 16px;
 
@@ -1129,7 +1521,7 @@
 }
 
 /* =========================================================
-   PROJECT CARD — CURVED
+   PROJECT CARD
 ========================================================= */
 
 .construction-project-card {
@@ -1164,6 +1556,7 @@
 
 .construction-project-overlay {
   position: absolute;
+
   inset: 0;
 
   background:
@@ -1178,6 +1571,7 @@
   position: absolute;
 
   left: 30px;
+
   bottom: 30px;
 
   color: #fff;
@@ -1188,7 +1582,7 @@
 
   margin-bottom: 8px;
 
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.64);
 
   font-size: 8px;
 
@@ -1200,14 +1594,15 @@
 .construction-project-info h3 {
   margin: 0;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: var(--font-display);
 
-  font-size: 30px;
+  font-size: 34px;
 
-  font-weight: 400;
+  font-weight: 500;
+
+  line-height: 0.95;
+
+  color: #fffdf8;
 }
 
 /* =========================================================
@@ -1218,14 +1613,17 @@
   position: absolute;
 
   right: 25px;
+
   top: 25px;
 
   width: 46px;
+
   height: 46px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   border: 1px solid rgba(255, 255, 255, 0.4);
@@ -1273,22 +1671,23 @@
 .construction-why-heading h2 {
   margin: 32px 0 0;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: var(--font-display);
 
-  font-size: clamp(55px, 6vw, 88px);
+  font-size: clamp(58px, 6vw, 92px);
 
-  line-height: 0.92;
+  line-height: 0.88;
 
-  font-weight: 400;
+  font-weight: 500;
 
   letter-spacing: -0.05em;
+
+  color: var(--construction-ink);
 }
 
 .construction-why-heading h2 em {
   font-style: italic;
+
+  color: var(--construction-accent-dark);
 }
 
 .construction-why-list {
@@ -1313,6 +1712,7 @@
 
 .construction-why-item:hover {
   padding-left: 12px;
+
   padding-right: 12px;
 
   background: var(--construction-paper);
@@ -1329,14 +1729,13 @@
 .construction-why-item h3 {
   margin: 0 0 10px;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: var(--font-display);
 
-  font-size: 25px;
+  font-size: 27px;
 
-  font-weight: 400;
+  font-weight: 500;
+
+  color: var(--construction-ink);
 }
 
 .construction-why-item p {
@@ -1374,7 +1773,7 @@
 
   inset: 0;
 
-  opacity: 0.08;
+  opacity: 0.07;
 
   background-image:
     linear-gradient(
@@ -1396,22 +1795,23 @@
 .construction-cta h2 {
   margin: 38px 0 30px;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: var(--font-display);
 
-  font-size: clamp(60px, 8vw, 115px);
+  font-size: clamp(65px, 8vw, 120px);
 
-  line-height: 0.88;
+  line-height: 0.84;
 
-  font-weight: 400;
+  font-weight: 500;
 
-  letter-spacing: -0.06em;
+  letter-spacing: -0.055em;
+
+  color: #fffdf8;
 }
 
 .construction-cta h2 em {
   font-style: italic;
+
+  color: #dfcba8;
 }
 
 .construction-cta p {
@@ -1437,9 +1837,17 @@
 }
 
 .construction-button-light {
-  background: #fffdf7;
+  background: #b09261;
 
-  color: var(--construction-dark);
+  color: #fffdf8;
+
+  border-color: #b09261;
+}
+
+.construction-button-light:hover {
+  background: #967744;
+
+  border-color: #967744;
 }
 
 .construction-cta-phone {
@@ -1453,18 +1861,21 @@
 
   text-decoration: none;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: var(--font-display);
 
-  font-size: 19px;
+  font-size: 21px;
+
+  transition: color 0.3s ease;
+}
+
+.construction-cta-phone:hover {
+  color: #dfcba8;
 }
 
 .construction-cta-phone small {
   color: rgba(255, 255, 255, 0.45);
 
-  font-family: Arial, sans-serif;
+  font-family: var(--construction-body);
 
   font-size: 7px;
 
@@ -1498,24 +1909,25 @@
 }
 
 .construction-logo strong {
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: var(--font-display);
 
-  font-size: 38px;
+  font-size: 42px;
 
-  font-weight: 400;
+  font-weight: 500;
 
-  line-height: 0.9;
+  line-height: 0.85;
+
+  color: #fffdf8;
 }
 
 .construction-logo span {
-  margin-top: 6px;
+  margin-top: 7px;
 
   font-size: 7px;
 
   letter-spacing: 0.24em;
+
+  color: rgba(255, 255, 255, 0.48);
 }
 
 .construction-footer-brand p {
@@ -1566,11 +1978,15 @@
 }
 
 .construction-footer-column a {
-  transition: color 0.25s ease;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .construction-footer-column a:hover {
   color: #fff;
+
+  transform: translateX(3px);
 }
 
 .construction-footer-bottom {
@@ -1681,12 +2097,12 @@
     background:
       linear-gradient(
         90deg,
-        rgba(8, 8, 7, 0.84),
-        rgba(8, 8, 7, 0.42)
+        rgba(8, 8, 7, 0.86),
+        rgba(8, 8, 7, 0.44)
       ),
       linear-gradient(
         0deg,
-        rgba(8, 8, 7, 0.6),
+        rgba(8, 8, 7, 0.62),
         transparent 60%
       );
   }
@@ -1706,9 +2122,11 @@
   }
 
   .construction-hero h1 {
-    font-size: clamp(55px, 17vw, 82px);
+    font-family: var(--font-display);
 
-    line-height: 0.91;
+    font-size: clamp(58px, 17vw, 84px);
+
+    line-height: 0.86;
   }
 
   .construction-hero-description {
@@ -1734,9 +2152,9 @@
   .construction-button {
     min-height: 50px;
 
-    padding: 0 18px;
+    padding: 0 20px;
 
-    border-radius: 12px;
+    border-radius: 999px;
 
     font-size: 9px;
   }
@@ -1774,11 +2192,27 @@
   }
 
   .construction-intro-grid h2 {
-    font-size: 48px;
+    font-family: var(--font-display);
+
+    font-size: 51px;
+
+    line-height: 0.91;
   }
 
   .construction-intro-copy p {
     font-size: 13px;
+
+    line-height: 1.8;
+  }
+
+  .construction-intro-copy p:first-of-type::first-letter {
+    font-family: var(--font-display);
+
+    font-size: 60px;
+
+    margin-top: 7px;
+
+    padding-right: 8px;
   }
 
   /* =======================================================
@@ -1800,7 +2234,9 @@
   }
 
   .construction-stat strong {
-    font-size: 38px;
+    font-family: var(--font-display);
+
+    font-size: 42px;
   }
 
   .construction-stat span {
@@ -1825,7 +2261,11 @@
 
   .construction-section-heading h2,
   .construction-project-heading h2 {
-    font-size: 48px;
+    font-family: var(--font-display);
+
+    font-size: 51px;
+
+    line-height: 0.91;
   }
 
   .construction-section-heading > p {
@@ -1853,7 +2293,9 @@
   }
 
   .construction-service-content h3 {
-    font-size: 27px;
+    font-family: var(--font-display);
+
+    font-size: 30px;
   }
 
   .construction-service-content p {
@@ -1862,14 +2304,17 @@
 
   .construction-service-number {
     width: 42px;
+
     height: 42px;
 
     top: 18px;
+
     left: 18px;
   }
 
   .construction-service-tag {
     right: 18px;
+
     bottom: 18px;
 
     padding: 8px 11px;
@@ -1890,9 +2335,13 @@
   }
 
   .construction-quality-content h2 {
+    font-family: var(--font-display);
+
     margin: 30px 0 70px;
 
-    font-size: 55px;
+    font-size: 60px;
+
+    line-height: 0.86;
   }
 
   .construction-quality-bottom {
@@ -1918,7 +2367,9 @@
   }
 
   .construction-process-heading h2 {
-    font-size: 55px;
+    font-family: var(--font-display);
+
+    font-size: 60px;
   }
 
   .construction-process-item {
@@ -1936,7 +2387,9 @@
   }
 
   .construction-process-title h3 {
-    font-size: 24px;
+    font-family: var(--font-display);
+
+    font-size: 27px;
   }
 
   .construction-process-description {
@@ -1953,6 +2406,7 @@
     grid-row: 1 / span 2;
 
     width: 35px;
+
     height: 35px;
 
     font-size: 13px;
@@ -1991,18 +2445,23 @@
 
   .construction-project-info {
     left: 22px;
+
     bottom: 22px;
   }
 
   .construction-project-info h3 {
-    font-size: 25px;
+    font-family: var(--font-display);
+
+    font-size: 29px;
   }
 
   .construction-project-arrow {
     width: 40px;
+
     height: 40px;
 
     right: 18px;
+
     top: 18px;
   }
 
@@ -2021,7 +2480,9 @@
   }
 
   .construction-why-heading h2 {
-    font-size: 55px;
+    font-family: var(--font-display);
+
+    font-size: 60px;
   }
 
   .construction-why-item {
@@ -2033,7 +2494,9 @@
   }
 
   .construction-why-item h3 {
-    font-size: 22px;
+    font-family: var(--font-display);
+
+    font-size: 25px;
   }
 
   .construction-why-item p {
@@ -2051,7 +2514,11 @@
   }
 
   .construction-cta h2 {
-    font-size: 65px;
+    font-family: var(--font-display);
+
+    font-size: 68px;
+
+    line-height: 0.85;
   }
 
   .construction-cta p {
@@ -2111,13 +2578,19 @@
   }
 
   .construction-hero h1 {
-    font-size: 54px;
+    font-family: var(--font-display);
+
+    font-size: 55px;
+
+    line-height: 0.87;
   }
 
   .construction-intro-grid h2,
   .construction-section-heading h2,
   .construction-project-heading h2 {
-    font-size: 43px;
+    font-family: var(--font-display);
+
+    font-size: 45px;
   }
 
   .construction-quality {
@@ -2125,12 +2598,16 @@
   }
 
   .construction-quality-content h2 {
-    font-size: 48px;
+    font-family: var(--font-display);
+
+    font-size: 50px;
   }
 
   .construction-process-heading h2,
   .construction-why-heading h2 {
-    font-size: 48px;
+    font-family: var(--font-display);
+
+    font-size: 50px;
   }
 
   .construction-cta {
@@ -2138,7 +2615,9 @@
   }
 
   .construction-cta h2 {
-    font-size: 55px;
+    font-family: var(--font-display);
+
+    font-size: 57px;
   }
 
   .construction-service-image {
@@ -2157,7 +2636,15 @@
   }
 
   .construction-stat strong {
-    font-size: 34px;
+    font-family: var(--font-display);
+
+    font-size: 36px;
+  }
+
+  .construction-intro-copy p:first-of-type::first-letter {
+    font-family: var(--font-display);
+
+    font-size: 54px;
   }
 }
 
@@ -2175,11 +2662,19 @@
   }
 
   .construction-hero h1 {
-    font-size: 128px;
+    font-family: var(--font-display);
+
+    font-size: 138px;
   }
 
   .construction-service-image {
     height: 410px;
+  }
+
+  .construction-intro-grid h2 {
+    font-family: var(--font-display);
+
+    font-size: 92px;
   }
 }
 

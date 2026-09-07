@@ -68,7 +68,7 @@ const stats = [
   ["10+", "Years of Experience"],
   ["100+", "Projects Delivered"],
   ["25+", "Construction Experts"],
-  ["98%", "Client Satisfaction"],
+  ["99%", "Client Satisfaction"],
 ];
 
 const projects = [
@@ -147,13 +147,13 @@ export default function Construction() {
         </div>
 
         <div className="construction-hero-bottom">
-          <span>01</span>
+          <span></span>
 
           <div className="construction-hero-line">
             <span />
           </div>
 
-          <span>CONSTRUCTION</span>
+          <span></span>
         </div>
       </section>
 
@@ -164,7 +164,7 @@ export default function Construction() {
         <div className="construction-container">
           <div className="construction-intro-top">
             <div className="construction-section-label">
-              <span>01</span>
+              <span></span>
               OUR APPROACH
             </div>
 
@@ -228,14 +228,14 @@ export default function Construction() {
           <div className="construction-section-heading">
             <div>
               <div className="construction-section-label">
-                <span>02</span>
+                <span></span>
                 OUR SERVICES
               </div>
 
               <h2>
                 Construction,
                 <br />
-                <em>without compromise.</em>
+                <em>Without Compromise.</em>
               </h2>
             </div>
 
@@ -284,6 +284,76 @@ export default function Construction() {
         </div>
       </section>
 
+    {/* =====================================================
+    PROJECT GALLERY
+===================================================== */}
+<section className="construction-gallery">
+  <div className="construction-container">
+
+    <div className="construction-gallery-heading">
+      <div className="construction-gallery-eyebrow">
+        OUR WORK
+      </div>
+
+      <h2>
+        Project <em>Gallery</em>
+      </h2>
+
+      <p>
+        A glimpse of our finest construction and commercial projects.
+      </p>
+    </div>
+
+    <div className="construction-gallery-grid">
+
+      <div className="construction-gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&w=1200&q=90"
+          alt="Commercial project"
+        />
+      </div>
+
+      <div className="construction-gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=90"
+          alt="Modern commercial interior"
+        />
+      </div>
+
+      <div className="construction-gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=90"
+          alt="Modern commercial building"
+        />
+      </div>
+
+      <div className="construction-gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=90"
+          alt="Construction site"
+        />
+      </div>
+
+      <div className="construction-gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=90"
+          alt="Premium retail project"
+        />
+      </div>
+
+      <div className="construction-gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=90"
+          alt="Premium office project"
+        />
+      </div>
+
+    </div>
+
+  </div>
+</section>
+      
+
       {/* =====================================================
           QUALITY BANNER
       ===================================================== */}
@@ -294,14 +364,14 @@ export default function Construction() {
 
         <div className="construction-container construction-quality-content">
           <div className="construction-section-label light">
-            <span>03</span>
+            <span></span>
             BUILT DIFFERENTLY
           </div>
 
           <h2>
-            Every layer matters.
+            Every Layer Matters.
             <br />
-            <em>Every detail counts.</em>
+            <em>Every Detail Counts.</em>
           </h2>
 
           <div className="construction-quality-bottom">
@@ -330,14 +400,14 @@ export default function Construction() {
 
           <div className="construction-process-heading">
             <div className="construction-section-label">
-              <span>04</span>
+              <span></span>
               THE JOURNEY
             </div>
 
             <h2>
-              From vision
+              From Vision
               <br />
-              <em>to reality.</em>
+              <em>to Reality.</em>
             </h2>
           </div>
 
@@ -374,14 +444,14 @@ export default function Construction() {
           <div className="construction-project-heading">
             <div>
               <div className="construction-section-label">
-                <span>05</span>
+                <span></span>
                 SELECTED WORK
               </div>
 
               <h2>
-                Spaces that
+                Spaces That
                 <br />
-                <em>speak for themselves.</em>
+                <em>Speak For Themselves.</em>
               </h2>
             </div>
 
@@ -422,12 +492,12 @@ export default function Construction() {
 
             <div className="construction-why-heading">
               <div className="construction-section-label">
-                <span>06</span>
+                <span></span>
                 WHY KSR
               </div>
 
               <h2>
-                A better way
+                A Better Way
                 <br />
                 <em>to build.</em>
               </h2>
@@ -496,14 +566,14 @@ export default function Construction() {
         <div className="construction-container construction-cta-content">
 
           <div className="construction-section-label light">
-            <span>07</span>
+            <span></span>
             LET'S BUILD
           </div>
 
           <h2>
-            Have a project
+            Have a Project
             <br />
-            <em>in mind?</em>
+            <em>in Mind?</em>
           </h2>
 
           <p>

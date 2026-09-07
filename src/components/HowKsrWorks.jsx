@@ -46,7 +46,7 @@ export default function HowKsrWorks() {
           </div>
 
           <h2>
-            Simple steps.
+            Simple Steps.
             <br />
             <span>Better decisions.</span>
           </h2>
@@ -74,13 +74,15 @@ export default function HowKsrWorks() {
                 key={step.title}
               >
 
-                {/* TOP DECORATION */}
+                {/* TOP NUMBER */}
+
                 <div className="ksr-card-number">
                   {String(index + 1).padStart(2, "0")}
                 </div>
 
 
                 {/* ICON */}
+
                 <div className="ksr-how-icon">
                   <Icon
                     size={20}
@@ -90,24 +92,28 @@ export default function HowKsrWorks() {
 
 
                 {/* STEP LABEL */}
+
                 <div className="ksr-how-label">
                   STEP {String(index + 1).padStart(2, "0")}
                 </div>
 
 
                 {/* TITLE */}
+
                 <h3>
                   {step.title}
                 </h3>
 
 
                 {/* DESCRIPTION */}
+
                 <p>
                   {step.text}
                 </p>
 
 
                 {/* BOTTOM LINE */}
+
                 <div className="ksr-how-card-line" />
 
               </div>
@@ -124,6 +130,11 @@ export default function HowKsrWorks() {
       ===================================================== */}
 
       <style>{`
+
+        @import url(
+          'https://fonts.googleapis.com/css2?family=Allura&display=swap'
+        );
+
 
         /* =====================================================
            RESET
@@ -174,13 +185,15 @@ export default function HowKsrWorks() {
         ===================================================== */
 
         .ksr-how-header {
-          max-width: 650px;
-
           margin-bottom: 58px;
+
+          max-width: 760px;
         }
 
 
-        /* EYEBROW */
+        /* =====================================================
+           EYEBROW
+        ===================================================== */
 
         .ksr-how-eyebrow {
           display: flex;
@@ -189,66 +202,109 @@ export default function HowKsrWorks() {
 
           gap: 10px;
 
-          margin-bottom: 20px;
+          margin-bottom: 22px;
 
-          color: #a27b43;
+          color: #9b9388;
+
+          font-family:
+            Arial,
+            Helvetica,
+            sans-serif;
 
           font-size: 10px;
 
           font-weight: 600;
 
-          letter-spacing: 0.18em;
+          letter-spacing: 0.19em;
+
+          text-transform: uppercase;
         }
 
 
         .ksr-how-line {
-          width: 30px;
+          display: inline-block;
+
+          width: 34px;
 
           height: 1px;
 
-          background: #a27b43;
+          background: #b98a4b;
 
-          flex-shrink: 0;
+          opacity: 0.7;
         }
 
 
-        /* HEADING */
+        /* =====================================================
+           MAIN HEADING
+        ===================================================== */
 
         .ksr-how-header h2 {
           margin: 0;
 
           font-family:
+            var(--font-display),
             Georgia,
             "Times New Roman",
             serif;
 
-          font-size: clamp(42px, 5vw, 64px);
+          font-size: clamp(48px, 6.5vw, 86px);
+
+          font-weight: 500;
+
+          line-height: 0.94;
+
+          letter-spacing: -0.055em;
+
+          color: var(--color-ink, #151514);
+        }
+
+
+        /* =====================================================
+           CURSIVE SECOND LINE
+        ===================================================== */
+
+        .ksr-how-header h2 span {
+          display: block;
+
+          margin-top: 9px;
+
+          color: #b98a4b;
+
+          font-family:
+            "Allura",
+            "Brush Script MT",
+            "Segoe Script",
+            cursive;
+
+          font-size: 1.08em;
 
           font-weight: 400;
 
-          line-height: 0.98;
+          font-style: normal;
 
-          letter-spacing: -0.045em;
+          line-height: 0.78;
+
+          letter-spacing: 0;
         }
 
 
-        .ksr-how-header h2 span {
-          color: #a27b43;
+        /* =====================================================
+           HEADER DESCRIPTION
+        ===================================================== */
 
-          font-style: italic;
-        }
+        .ksr-how-header > p {
+          max-width: 570px;
 
-
-        /* DESCRIPTION */
-
-        .ksr-how-header p {
-          max-width: 520px;
-
-          margin: 24px 0 0;
+          margin: 28px 0 0;
 
           color: #77736c;
 
-          font-size: 14px;
+          font-family:
+            Arial,
+            Helvetica,
+            sans-serif;
+
+          font-size: 13px;
 
           line-height: 1.8;
         }
@@ -297,7 +353,9 @@ export default function HowKsrWorks() {
         }
 
 
-        /* SUBTLE CARD GLOW */
+        /* =====================================================
+           CARD GLOW
+        ===================================================== */
 
         .ksr-how-card::before {
           content: "";
@@ -324,7 +382,9 @@ export default function HowKsrWorks() {
         }
 
 
-        /* HOVER */
+        /* =====================================================
+           HOVER
+        ===================================================== */
 
         .ksr-how-card:hover {
           background: #ffffff;
@@ -346,7 +406,7 @@ export default function HowKsrWorks() {
 
 
         /* =====================================================
-           SMALL NUMBER
+           NUMBER
         ===================================================== */
 
         .ksr-card-number {
@@ -368,6 +428,8 @@ export default function HowKsrWorks() {
           font-style: italic;
 
           opacity: 0.75;
+
+          z-index: 2;
         }
 
 
@@ -408,6 +470,10 @@ export default function HowKsrWorks() {
         }
 
 
+        /* =====================================================
+           ICON HOVER
+        ===================================================== */
+
         .ksr-how-card:hover .ksr-how-icon {
           background: #a27b43;
 
@@ -434,6 +500,11 @@ export default function HowKsrWorks() {
 
           color: #aaa49b;
 
+          font-family:
+            Arial,
+            Helvetica,
+            sans-serif;
+
           font-size: 9px;
 
           font-weight: 600;
@@ -443,7 +514,8 @@ export default function HowKsrWorks() {
 
 
         /* =====================================================
-           TITLE
+           CARD TITLE
+           var(--font-display)
         ===================================================== */
 
         .ksr-how-card h3 {
@@ -456,19 +528,20 @@ export default function HowKsrWorks() {
           max-width: 220px;
 
           font-family:
+            var(--font-display),
             Georgia,
             "Times New Roman",
             serif;
 
-          color: #171614;
+          color: var(--color-ink, #171614);
 
-          font-size: 25px;
+          font-size: 1.25rem;
 
-          font-weight: 400;
+          font-weight: 500;
 
-          line-height: 1.08;
+          line-height: 1.15;
 
-          letter-spacing: -0.025em;
+          letter-spacing: -0.02em;
         }
 
 
@@ -486,6 +559,11 @@ export default function HowKsrWorks() {
           max-width: 240px;
 
           color: #77736c;
+
+          font-family:
+            Arial,
+            Helvetica,
+            sans-serif;
 
           font-size: 12.5px;
 
@@ -614,12 +692,19 @@ export default function HowKsrWorks() {
           .ksr-how-header h2 {
             font-size: 43px;
 
-            line-height: 0.99;
+            line-height: 0.96;
           }
 
 
-          .ksr-how-header p {
-            margin-top: 20px;
+          .ksr-how-header h2 span {
+            margin-top: 8px;
+
+            font-size: 1.08em;
+          }
+
+
+          .ksr-how-header > p {
+            margin-top: 21px;
 
             font-size: 13px;
 
@@ -689,11 +774,11 @@ export default function HowKsrWorks() {
           /* TITLE */
 
           .ksr-how-card h3 {
-            max-width: 260px;
+            max-width: 280px;
 
-            font-size: 24px;
+            font-size: 1.25rem;
 
-            line-height: 1.1;
+            line-height: 1.15;
           }
 
 
@@ -751,7 +836,7 @@ export default function HowKsrWorks() {
 
 
           .ksr-how-card h3 {
-            font-size: 22px;
+            font-size: 1.2rem;
           }
 
 

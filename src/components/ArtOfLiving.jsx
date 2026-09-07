@@ -174,853 +174,1123 @@ export default function ArtOfLiving() {
 
       <style>{`
 
-        /* =====================================================
-           ROOT
-        ===================================================== */
+/* =====================================================
+   ROOT
+===================================================== */
 
-        .aol-section,
-        .aol-section * {
-          box-sizing: border-box;
-        }
+.aol-section,
+.aol-section * {
+  box-sizing: border-box;
+}
 
-        .aol-section {
+.aol-section {
 
-          --aol-bg: #fcfaf6;
-          --aol-panel: #f5efe4;
+  --aol-bg: #fcfaf6;
+  --aol-panel: #f5efe4;
 
-          --aol-black: #151514;
-          --aol-text: #625d55;
-          --aol-muted: #9b9489;
+  --aol-black: #151514;
+  --aol-text: #625d55;
+  --aol-muted: #9b9489;
 
-          --aol-gold: #a77c40;
+  --aol-gold: #a77c40;
 
-          width: 100%;
+  width: 100%;
 
-          padding:
-            100px 24px
-            90px;
+  padding:
+    100px 24px
+    90px;
 
-          background:
-            radial-gradient(
-              circle at 90% 10%,
-              rgba(167,124,64,.055),
-              transparent 30%
-            ),
-            var(--aol-bg);
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(167,124,64,.055),
+      transparent 30%
+    ),
+    var(--aol-bg);
 
-          color: var(--aol-black);
+  color: var(--aol-black);
 
-          overflow: hidden;
-        }
+  overflow: hidden;
+}
 
 
-        /* =====================================================
-           CONTAINER
-        ===================================================== */
+/* =====================================================
+   CONTAINER
+===================================================== */
 
-        .aol-container {
+.aol-container {
 
-          width:
-            min(1180px, 100%);
+  width:
+    min(1180px, 100%);
 
-          margin: 0 auto;
-        }
+  margin: 0 auto;
+}
 
 
-        /* =====================================================
-           TOP
-        ===================================================== */
+/* =====================================================
+   TOP
+===================================================== */
 
-        .aol-top {
+.aol-top {
 
-          display: flex;
+  display: flex;
 
-          align-items: center;
+  align-items: center;
 
-          justify-content: space-between;
+  justify-content: space-between;
 
-          padding-bottom: 20px;
+  padding-bottom: 20px;
 
-          border-bottom:
-            1px solid
-            rgba(21,21,20,.09);
-        }
+  border-bottom:
+    1px solid
+    rgba(21,21,20,.09);
+}
 
 
-        .aol-label {
+.aol-label {
 
-          display: flex;
+  display: flex;
 
-          align-items: center;
+  align-items: center;
 
-          gap: 10px;
+  gap: 10px;
 
-          color: var(--aol-gold);
+  color: var(--aol-gold);
 
-          font-size: 9px;
+  font-size: 9px;
 
-          font-weight: 800;
+  font-weight: 800;
 
-          letter-spacing: .22em;
-        }
+  letter-spacing: .22em;
+}
 
 
-        .aol-label span {
+.aol-label span {
 
-          width: 30px;
+  width: 30px;
 
-          height: 2px;
+  height: 2px;
 
-          background:
-            var(--aol-gold);
-        }
+  background:
+    var(--aol-gold);
+}
 
 
-        .aol-brand {
+.aol-brand {
 
-          color: #aaa298;
+  color: #aaa298;
 
-          font-size: 7px;
+  font-size: 7px;
 
-          font-weight: 700;
+  font-weight: 700;
 
-          letter-spacing: .2em;
-        }
+  letter-spacing: .2em;
+}
 
 
-        /* =====================================================
-           HEADING
-        ===================================================== */
+/* =====================================================
+   HEADING
+===================================================== */
 
-        .aol-heading-area {
+.aol-heading-area {
 
-          display: grid;
+  display: grid;
 
-          grid-template-columns:
-            1fr
-            380px;
+  grid-template-columns:
+    1fr
+    380px;
 
-          align-items: end;
+  align-items: end;
 
-          gap: 70px;
+  gap: 70px;
 
-          padding:
-            65px 0
-            55px;
-        }
+  padding:
+    65px 0
+    55px;
+}
 
 
-        .aol-heading-area h2 {
+.aol-heading-area h2 {
 
-          margin: 0;
+  margin: 0;
 
-          font-family:
-            Arial,
-            Helvetica,
-            sans-serif;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-          font-size:
-            clamp(
-              65px,
-              9vw,
-              125px
-            );
+  font-size:
+    clamp(
+      65px,
+      9vw,
+      125px
+    );
 
-          line-height: .82;
+  line-height: .82;
 
-          font-weight: 900;
+  font-weight: 900;
 
-          letter-spacing:
-            -.075em;
-        }
+  letter-spacing:
+    -.075em;
 
+  max-width: 100%;
+}
 
-        .aol-heading-area h2 span {
 
-          color: var(--aol-gold);
-        }
+.aol-heading-area h2 span {
 
+  color: var(--aol-gold);
+}
 
-        .aol-heading-text {
 
-          padding-bottom: 5px;
-        }
+.aol-heading-text {
 
+  padding-bottom: 5px;
 
-        .aol-heading-text strong {
+  min-width: 0;
+}
 
-          display: block;
 
-          margin-bottom: 13px;
+.aol-heading-text strong {
 
-          font-size: 11px;
+  display: block;
 
-          line-height: 1.4;
+  margin-bottom: 13px;
 
-          font-weight: 800;
+  font-size: 11px;
 
-          letter-spacing: .08em;
-        }
+  line-height: 1.4;
 
+  font-weight: 800;
 
-        .aol-heading-text p {
+  letter-spacing: .08em;
+}
 
-          margin: 0;
 
-          color: var(--aol-text);
+.aol-heading-text p {
 
-          font-size: 13px;
+  margin: 0;
 
-          line-height: 1.8;
-        }
+  color: var(--aol-text);
 
+  font-size: 13px;
 
-        /* =====================================================
-           FEATURE PANEL
-        ===================================================== */
+  line-height: 1.8;
 
-        .aol-feature-panel {
+  overflow-wrap: break-word;
+}
 
-          position: relative;
 
-          min-height: 390px;
+/* =====================================================
+   FEATURE PANEL
+===================================================== */
 
-          display: flex;
+.aol-feature-panel {
 
-          align-items: center;
+  position: relative;
 
-          justify-content: center;
+  min-height: 390px;
 
-          padding: 60px;
+  display: flex;
 
-          border-radius: 48px;
+  align-items: center;
 
-          background:
-            linear-gradient(
-              135deg,
-              #f8f2e8,
-              #eee5d6
-            );
+  justify-content: center;
 
-          border:
-            1px solid
-            rgba(21,21,20,.08);
+  padding: 60px;
 
-          overflow: hidden;
+  border-radius: 48px;
 
-          box-shadow:
-            0 22px 65px
-            rgba(50,40,25,.055);
-        }
+  background:
+    linear-gradient(
+      135deg,
+      #f8f2e8,
+      #eee5d6
+    );
 
+  border:
+    1px solid
+    rgba(21,21,20,.08);
 
-        /* =====================================================
-           CIRCLE
-        ===================================================== */
+  overflow: hidden;
 
-        .aol-panel-circle {
+  box-shadow:
+    0 22px 65px
+    rgba(50,40,25,.055);
+}
 
-          position: absolute;
 
-          width: 370px;
+/* =====================================================
+   CIRCLE
+===================================================== */
 
-          height: 370px;
+.aol-panel-circle {
 
-          left: -150px;
+  position: absolute;
 
-          top: -135px;
+  width: 370px;
 
-          border-radius: 50%;
+  height: 370px;
 
-          border:
-            1px solid
-            rgba(167,124,64,.22);
-        }
+  left: -150px;
 
+  top: -135px;
 
-        .aol-panel-circle::before {
+  border-radius: 50%;
 
-          content: "";
+  border:
+    1px solid
+    rgba(167,124,64,.22);
+}
 
-          position: absolute;
 
-          inset: 22px;
+.aol-panel-circle::before {
 
-          border:
-            1px dashed
-            rgba(167,124,64,.18);
+  content: "";
 
-          border-radius: 50%;
-        }
+  position: absolute;
 
+  inset: 22px;
 
-        .aol-panel-circle span {
+  border:
+    1px dashed
+    rgba(167,124,64,.18);
 
-          position: absolute;
+  border-radius: 50%;
+}
 
-          right: 40px;
 
-          bottom: 55px;
+.aol-panel-circle span {
 
-          color:
-            rgba(167,124,64,.45);
+  position: absolute;
 
-          font-size: 7px;
+  right: 40px;
 
-          font-weight: 800;
+  bottom: 55px;
 
-          letter-spacing: .25em;
+  color:
+    rgba(167,124,64,.45);
 
-          transform: rotate(-45deg);
-        }
+  font-size: 7px;
 
+  font-weight: 800;
 
-        /* =====================================================
-           PANEL CONTENT
-        ===================================================== */
+  letter-spacing: .25em;
 
-        .aol-panel-content {
+  transform: rotate(-45deg);
+}
 
-          position: relative;
 
-          z-index: 2;
+/* =====================================================
+   PANEL CONTENT
+===================================================== */
 
-          max-width: 620px;
+.aol-panel-content {
 
-          text-align: center;
-        }
+  position: relative;
 
+  z-index: 2;
 
-        .aol-panel-label {
+  width: 100%;
 
-          margin-bottom: 17px;
+  max-width: 620px;
 
-          color: var(--aol-gold);
+  text-align: center;
+}
 
-          font-size: 8px;
 
-          font-weight: 800;
+.aol-panel-label {
 
-          letter-spacing: .2em;
-        }
+  margin-bottom: 17px;
 
+  color: var(--aol-gold);
 
-        .aol-panel-content h3 {
+  font-size: 8px;
 
-          margin: 0;
+  font-weight: 800;
 
-          font-family:
-            Arial,
-            Helvetica,
-            sans-serif;
+  letter-spacing: .2em;
+}
 
-          font-size:
-            clamp(
-              42px,
-              5vw,
-              65px
-            );
 
-          line-height: .88;
+.aol-panel-content h3 {
 
-          font-weight: 900;
+  margin: 0;
 
-          letter-spacing:
-            -.065em;
-        }
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
+  font-size:
+    clamp(
+      42px,
+      5vw,
+      65px
+    );
 
-        .aol-panel-content h3 span {
+  line-height: .88;
 
-          color: var(--aol-gold);
-        }
+  font-weight: 900;
 
+  letter-spacing:
+    -.065em;
+}
 
-        .aol-panel-content p {
 
-          max-width: 490px;
+.aol-panel-content h3 span {
 
-          margin:
-            24px auto 0;
+  color: var(--aol-gold);
+}
 
-          color: var(--aol-text);
 
-          font-size: 12.5px;
+.aol-panel-content p {
 
-          line-height: 1.8;
-        }
+  max-width: 490px;
 
+  margin:
+    24px auto 0;
 
-        /* =====================================================
-           KSR MARK
-        ===================================================== */
+  color: var(--aol-text);
 
-        .aol-panel-mark {
+  font-size: 12.5px;
 
-          position: absolute;
+  line-height: 1.8;
+}
 
-          right: 30px;
 
-          top: 50%;
+/* =====================================================
+   KSR MARK
+===================================================== */
 
-          transform:
-            translateY(-50%);
+.aol-panel-mark {
 
-          color:
-            rgba(167,124,64,.14);
+  position: absolute;
 
-          font-family:
-            Georgia,
-            serif;
+  right: 30px;
 
-          font-size: 54px;
+  top: 50%;
 
-          font-weight: 700;
+  transform:
+    translateY(-50%);
 
-          letter-spacing: .08em;
+  color:
+    rgba(167,124,64,.14);
 
-          writing-mode:
-            vertical-rl;
-        }
+  font-family:
+    Georgia,
+    serif;
 
+  font-size: 54px;
 
-        /* =====================================================
-           FEATURES
-        ===================================================== */
+  font-weight: 700;
 
-        .aol-features {
+  letter-spacing: .08em;
 
-          display: grid;
+  writing-mode:
+    vertical-rl;
+}
 
-          grid-template-columns:
-            repeat(3, 1fr);
 
-          gap: 50px;
+/* =====================================================
+   FEATURES
+===================================================== */
 
-          padding:
-            50px 5px
-            42px;
-        }
+.aol-features {
 
+  display: grid;
 
-        .aol-feature {
+  grid-template-columns:
+    repeat(3, 1fr);
 
-          display: grid;
+  gap: 50px;
 
-          grid-template-columns:
-            46px
-            1fr;
+  padding:
+    50px 5px
+    42px;
+}
 
-          gap: 15px;
-        }
 
+.aol-feature {
 
-        .aol-icon {
+  display: grid;
 
-          width: 42px;
+  grid-template-columns:
+    46px
+    1fr;
 
-          height: 42px;
+  gap: 15px;
 
-          display: flex;
+  min-width: 0;
+}
 
-          align-items: center;
 
-          justify-content: center;
+.aol-icon {
 
-          border-radius: 50%;
+  width: 42px;
 
-          color: var(--aol-gold);
+  height: 42px;
 
-          background: #fffaf1;
+  display: flex;
 
-          border:
-            1px solid
-            rgba(167,124,64,.2);
+  align-items: center;
 
-          transition:
-            .3s ease;
-        }
+  justify-content: center;
 
+  border-radius: 50%;
 
-        .aol-feature:hover
-        .aol-icon {
+  color: var(--aol-gold);
 
-          color: white;
+  background: #fffaf1;
 
-          background:
-            var(--aol-gold);
+  border:
+    1px solid
+    rgba(167,124,64,.2);
 
-          transform:
-            translateY(-3px);
-        }
+  transition:
+    .3s ease;
+}
 
 
-        .aol-feature h4 {
+.aol-feature:hover
+.aol-icon {
 
-          margin:
-            2px 0
-            8px;
+  color: white;
 
-          font-size: 17px;
+  background:
+    var(--aol-gold);
 
-          font-weight: 800;
+  transform:
+    translateY(-3px);
+}
 
-          letter-spacing: -.02em;
-        }
 
+.aol-feature h4 {
 
-        .aol-feature p {
+  margin:
+    2px 0
+    8px;
 
-          margin: 0;
+  font-size: 17px;
 
-          max-width: 260px;
+  font-weight: 800;
 
-          color: var(--aol-text);
+  letter-spacing: -.02em;
+}
 
-          font-size: 11.5px;
 
-          line-height: 1.75;
-        }
+.aol-feature p {
 
+  margin: 0;
 
-        /* =====================================================
-           BOTTOM
-        ===================================================== */
+  max-width: 260px;
 
-        .aol-bottom {
+  color: var(--aol-text);
 
-          display: flex;
+  font-size: 11.5px;
 
-          justify-content: center;
+  line-height: 1.75;
+}
 
-          align-items: center;
 
-          gap: 14px;
+/* =====================================================
+   BOTTOM
+===================================================== */
 
-          padding-top: 19px;
+.aol-bottom {
 
-          border-top:
-            1px solid
-            rgba(21,21,20,.08);
+  display: flex;
 
-          color: #aaa298;
+  justify-content: center;
 
-          font-size: 6px;
+  align-items: center;
 
-          font-weight: 800;
+  gap: 14px;
 
-          letter-spacing: .22em;
-        }
+  padding-top: 19px;
 
+  border-top:
+    1px solid
+    rgba(21,21,20,.08);
 
-        .aol-bottom div {
+  color: #aaa298;
 
-          width: 32px;
+  font-size: 6px;
 
-          height: 2px;
+  font-weight: 800;
 
-          background:
-            var(--aol-gold);
-        }
+  letter-spacing: .22em;
+}
 
 
-        /* =====================================================
-           TABLET
-        ===================================================== */
+.aol-bottom div {
 
-        @media (max-width: 900px) {
+  width: 32px;
 
-          .aol-section {
+  height: 2px;
 
-            padding:
-              75px 22px;
-          }
+  background:
+    var(--aol-gold);
+}
 
 
-          .aol-heading-area {
+/* =====================================================
+   TABLET
+===================================================== */
 
-            grid-template-columns: 1fr;
+@media (max-width: 900px) {
 
-            gap: 25px;
+  .aol-section {
 
-            padding:
-              55px 0
-              45px;
-          }
+    padding:
+      75px 22px;
+  }
 
 
-          .aol-heading-area h2 {
+  .aol-heading-area {
 
-            font-size:
-              clamp(
-                65px,
-                12vw,
-                100px
-              );
-          }
+    grid-template-columns: 1fr;
 
+    gap: 25px;
 
-          .aol-heading-text {
+    padding:
+      55px 0
+      45px;
+  }
 
-            max-width: 560px;
-          }
 
+  .aol-heading-area h2 {
 
-          .aol-feature-panel {
+    font-size:
+      clamp(
+        58px,
+        11vw,
+        90px
+      );
 
-            min-height: 350px;
+    max-width: 900px;
+  }
 
-            border-radius: 38px;
-          }
 
+  .aol-heading-text {
 
-          .aol-features {
+    max-width: 560px;
 
-            gap: 25px;
-          }
+    padding-bottom: 0;
+  }
 
-        }
 
+  .aol-feature-panel {
 
-        /* =====================================================
-           MOBILE
-        ===================================================== */
+    min-height: 350px;
 
-        @media (max-width: 650px) {
+    border-radius: 38px;
+  }
 
-          .aol-section {
 
-            padding:
-              62px 17px
-              50px;
-          }
+  .aol-features {
 
+    gap: 25px;
+  }
 
-          .aol-brand {
+}
 
-            display: none;
-          }
 
+/* =====================================================
+   MOBILE
+===================================================== */
 
-          .aol-label {
+@media (max-width: 650px) {
 
-            font-size: 8px;
+  .aol-section {
 
-            letter-spacing: .17em;
-          }
+    padding:
+      62px 17px
+      50px;
+  }
 
 
-          .aol-heading-area {
+  .aol-brand {
 
-            padding:
-              42px 0
-              35px;
+    display: none;
+  }
 
-            gap: 25px;
-          }
 
+  .aol-label {
 
-          .aol-heading-area h2 {
+    font-size: 8px;
 
-            font-size:
-              clamp(
-                58px,
-                18vw,
-                85px
-              );
+    letter-spacing: .17em;
+  }
 
-            line-height: .84;
-          }
 
+  /* ================================================
+     HEADING AREA
+  ================================================ */
 
-          .aol-heading-text strong {
+  .aol-heading-area {
 
-            font-size: 10px;
-          }
+    display: block;
 
+    padding:
+      38px 0
+      32px;
 
-          .aol-heading-text p {
+    width: 100%;
+  }
 
-            font-size: 12px;
 
-            line-height: 1.8;
-          }
+  /* ================================================
+     LIVE BEAUTIFULLY
+  ================================================ */
 
+  .aol-heading-area h2 {
 
-          /* PANEL */
+    display: block;
 
-          .aol-feature-panel {
+    width: 100%;
 
-            min-height: 340px;
+    max-width: 100%;
 
-            padding:
-              40px 22px;
+    margin: 0;
 
-            border-radius: 28px;
-          }
+    font-size:
+      clamp(
+        39px,
+        12.5vw,
+        58px
+      );
 
+    line-height: .9;
 
-          .aol-panel-circle {
+    letter-spacing:
+      -.065em;
 
-            width: 240px;
+    white-space: normal;
 
-            height: 240px;
+    overflow-wrap: normal;
 
-            left: -105px;
+    word-break: normal;
+  }
 
-            top: -85px;
-          }
 
+  /* ================================================
+     RIGHT TEXT
+  ================================================ */
 
-          .aol-panel-circle::before {
+  .aol-heading-text {
 
-            inset: 16px;
-          }
+    width: 100%;
 
+    max-width: 100%;
 
-          .aol-panel-content h3 {
+    margin-top: 24px;
 
-            font-size:
-              clamp(
-                38px,
-                11vw,
-                55px
-              );
-          }
+    padding: 0;
+  }
 
 
-          .aol-panel-content p {
+  .aol-heading-text strong {
 
-            font-size: 11.5px;
+    margin-bottom: 8px;
 
-            line-height: 1.8;
-          }
+    font-size: 9px;
 
+    line-height: 1.35;
 
-          .aol-panel-mark {
+    letter-spacing: .07em;
+  }
 
-            right: 10px;
 
-            font-size: 30px;
-          }
+  .aol-heading-text p {
 
+    width: 100%;
 
-          /* FEATURES */
+    max-width: 100%;
 
-          .aol-features {
+    margin: 0;
 
-            display: flex;
+    font-size: 11px;
 
-            flex-direction: column;
+    line-height: 1.65;
 
-            gap: 0;
+    color: var(--aol-text);
 
-            padding:
-              30px 0
-              25px;
-          }
+    overflow-wrap: break-word;
 
+    word-break: normal;
+  }
 
-          .aol-feature {
 
-            grid-template-columns:
-              44px
-              1fr;
+  /* ================================================
+     PANEL
+  ================================================ */
 
-            padding:
-              19px 0;
+  .aol-feature-panel {
 
-            border-bottom:
-              1px solid
-              rgba(21,21,20,.08);
-          }
+    min-height: 340px;
 
+    padding:
+      40px 22px;
 
-          .aol-feature:first-child {
+    border-radius: 28px;
+  }
 
-            padding-top: 0;
-          }
 
+  .aol-panel-circle {
 
-          .aol-feature:last-child {
+    width: 240px;
 
-            border-bottom: none;
-          }
+    height: 240px;
 
+    left: -105px;
 
-          .aol-feature h4 {
+    top: -85px;
+  }
 
-            font-size: 17px;
-          }
 
+  .aol-panel-circle::before {
 
-          .aol-feature p {
+    inset: 16px;
+  }
 
-            max-width: 100%;
 
-            font-size: 11.5px;
-          }
+  .aol-panel-content {
 
+    max-width: 100%;
+  }
 
-          .aol-bottom {
 
-            font-size: 5px;
+  .aol-panel-content h3 {
 
-            letter-spacing: .16em;
-          }
-        }
+    font-size:
+      clamp(
+        34px,
+        10vw,
+        50px
+      );
 
+    line-height: .9;
+  }
 
-        /* =====================================================
-           SMALL MOBILE
-        ===================================================== */
 
-        @media (max-width: 380px) {
+  .aol-panel-content p {
 
-          .aol-section {
+    width: 100%;
 
-            padding:
-              54px 14px
-              43px;
-          }
+    max-width: 430px;
 
+    margin-top: 20px;
 
-          .aol-heading-area h2 {
+    font-size: 11px;
 
-            font-size: 57px;
-          }
+    line-height: 1.7;
+  }
 
 
-          .aol-feature-panel {
+  .aol-panel-mark {
 
-            min-height: 320px;
+    right: 7px;
 
-            border-radius: 24px;
-          }
+    font-size: 27px;
+  }
 
 
-          .aol-panel-content h3 {
+  /* ================================================
+     FEATURES
+  ================================================ */
 
-            font-size: 36px;
-          }
+  .aol-features {
 
+    display: flex;
 
-          .aol-panel-content p {
+    flex-direction: column;
 
-            font-size: 11px;
-          }
-        }
+    gap: 0;
 
+    padding:
+      28px 0
+      22px;
+  }
 
-        @media (prefers-reduced-motion: reduce) {
 
-          .aol-section * {
+  .aol-feature {
 
-            transition: none !important;
-          }
-        }
+    grid-template-columns:
+      42px
+      minmax(0, 1fr);
 
-      `}</style>
+    gap: 13px;
+
+    padding:
+      18px 0;
+
+    border-bottom:
+      1px solid
+      rgba(21,21,20,.08);
+  }
+
+
+  .aol-feature:first-child {
+
+    padding-top: 0;
+  }
+
+
+  .aol-feature:last-child {
+
+    border-bottom: none;
+  }
+
+
+  .aol-icon {
+
+    width: 40px;
+
+    height: 40px;
+  }
+
+
+  .aol-feature h4 {
+
+    margin:
+      1px 0
+      7px;
+
+    font-size: 15px;
+
+    line-height: 1.3;
+  }
+
+
+  .aol-feature p {
+
+    max-width: 100%;
+
+    font-size: 10.5px;
+
+    line-height: 1.7;
+  }
+
+
+  /* ================================================
+     BOTTOM
+  ================================================ */
+
+  .aol-bottom {
+
+    gap: 10px;
+
+    font-size: 5px;
+
+    letter-spacing: .13em;
+
+    text-align: center;
+  }
+
+
+  .aol-bottom div {
+
+    width: 24px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+  .aol-section {
+
+    padding:
+      52px 14px
+      42px;
+  }
+
+
+  /* HEADING */
+
+  .aol-heading-area {
+
+    padding:
+      34px 0
+      28px;
+  }
+
+
+  .aol-heading-area h2 {
+
+    font-size:
+      clamp(
+        35px,
+        11.8vw,
+        48px
+      );
+
+    line-height: .92;
+
+    letter-spacing:
+      -.06em;
+  }
+
+
+  .aol-heading-text {
+
+    margin-top: 20px;
+  }
+
+
+  .aol-heading-text strong {
+
+    font-size: 8px;
+
+    margin-bottom: 7px;
+  }
+
+
+  .aol-heading-text p {
+
+    font-size: 10px;
+
+    line-height: 1.65;
+  }
+
+
+  /* PANEL */
+
+  .aol-feature-panel {
+
+    min-height: 315px;
+
+    padding:
+      35px 18px;
+
+    border-radius: 24px;
+  }
+
+
+  .aol-panel-content h3 {
+
+    font-size: 32px;
+
+    line-height: .92;
+  }
+
+
+  .aol-panel-content p {
+
+    font-size: 10.5px;
+
+    line-height: 1.65;
+
+    margin-top: 17px;
+  }
+
+
+  .aol-panel-mark {
+
+    right: 5px;
+
+    font-size: 24px;
+  }
+
+
+  /* FEATURES */
+
+  .aol-feature {
+
+    grid-template-columns:
+      40px
+      minmax(0, 1fr);
+
+    gap: 11px;
+  }
+
+
+  .aol-icon {
+
+    width: 38px;
+
+    height: 38px;
+  }
+
+
+  .aol-feature h4 {
+
+    font-size: 14px;
+  }
+
+
+  .aol-feature p {
+
+    font-size: 10px;
+
+    line-height: 1.65;
+  }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 340px) {
+
+  .aol-section {
+
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+
+  .aol-heading-area h2 {
+
+    font-size: 34px;
+
+    letter-spacing: -.055em;
+  }
+
+
+  .aol-heading-text p {
+
+    font-size: 9.5px;
+  }
+
+
+  .aol-panel-content h3 {
+
+    font-size: 29px;
+  }
+
+
+  .aol-panel-content p {
+
+    font-size: 10px;
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .aol-section * {
+
+    transition: none !important;
+
+    animation: none !important;
+  }
+
+}
+
+`}</style>
 
     </section>
   );

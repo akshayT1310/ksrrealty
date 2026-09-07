@@ -11,6 +11,7 @@ import FounderDesk from "../components/FounderDesk";
 import AwardsRecognition from "../components/AwardsRecognition";
 import WhyKSR from "../components/WhyKSR";
 import TrackRecord from "../components/TrackRecord";
+
 import ServicesSection from "../components/ServicesSection";
 import ConsultantLounge from "../components/ConsultantLounge";
 import FAQSection from "../components/FAQSection";
@@ -400,6 +401,16 @@ export default function Home({ onOpenProperty }) {
       <TrackRecord
         partnerLogos={partnerLogos}
       />
+
+      
+      {/* ===================================================
+          08. TRACK RECORD
+      =================================================== */}
+
+      <ServicesSection
+        partnerLogos={partnerLogos}
+      />
+
 
       {/* ===================================================
           09. CONSULTANT LOUNGE
