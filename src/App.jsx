@@ -22,9 +22,13 @@ import Contact from "./pages/Contact";
 import Blogs from "./pages/Blogs";
 import PropertyDetail from "./pages/PropertyDetail";
 
+// ADMIN PAGE
+import Admin from "./pages/Admin";
+
 import PropertyModal from "./components/PropertyModal";
 import AuthModal from "./components/AuthModal";
 import PostPropertyModal from "./components/PostPropertyModal";
+
 
 /* =========================================================
    SMOOTH SCROLL / HASH
@@ -72,6 +76,7 @@ function ScrollToHash() {
   return null;
 }
 
+
 /* =========================================================
    PAGE WRAPPER
 ========================================================= */
@@ -80,11 +85,12 @@ function PageWrapper({ children }) {
   return <main className="main-content">{children}</main>;
 }
 
+
 /* =========================================================
-   APP CONTENT
+   WEBSITE LAYOUT
 ========================================================= */
 
-function AppContent() {
+function WebsiteLayout() {
   const [selectedProperty, setSelectedProperty] = useState(null);
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -95,8 +101,9 @@ function AppContent() {
 
   const [postType, setPostType] = useState("property");
 
+
   /* =======================================================
-     LOGIN RESTORE
+     LOGIN RESTORE + HEADER HEIGHT
   ======================================================= */
 
   useEffect(() => {
@@ -106,10 +113,6 @@ function AppContent() {
       setIsLoggedIn(true);
       setUserPhone(savedPhone);
     }
-
-    /* =====================================================
-       HEADER HEIGHT
-    ===================================================== */
 
     const updateHeaderH = () => {
       const header = document.querySelector(".ksr-header");
@@ -131,6 +134,7 @@ function AppContent() {
     };
   }, []);
 
+
   /* =======================================================
      LOGIN SUCCESS
   ======================================================= */
@@ -145,6 +149,7 @@ function AppContent() {
     setShowPostModal(true);
   };
 
+
   /* =======================================================
      LOGOUT
   ======================================================= */
@@ -156,245 +161,262 @@ function AppContent() {
     setUserPhone("");
   };
 
-  /* =======================================================
-     RENDER
-  ======================================================= */
+
+  return (
+    <div className="app-container">
+
+      {/* HEADER */}
+
+      <Header
+        isLoggedIn={isLoggedIn}
+        userPhone={userPhone}
+        onLogout={handleLogout}
+        onOpenAuth={() => setShowAuthModal(true)}
+        onOpenPost={(type) => {
+          setPostType(type);
+
+          if (isLoggedIn) {
+            setShowPostModal(true);
+          } else {
+            setShowAuthModal(true);
+          }
+        }}
+      />
+
+
+      {/* WEBSITE PAGES */}
+
+      <PageWrapper>
+        <Routes>
+
+          {/* HOME */}
+
+          <Route
+            path="/"
+            element={
+              <Home
+                onOpenProperty={setSelectedProperty}
+              />
+            }
+          />
+
+
+          {/* SEARCH */}
+
+          <Route
+            path="/search"
+            element={
+              <Search
+                onOpenProperty={setSelectedProperty}
+              />
+            }
+          />
+
+
+          {/* PROPERTY SEARCH */}
+
+          <Route
+            path="/property"
+            element={
+              <Search
+                onOpenProperty={setSelectedProperty}
+              />
+            }
+          />
+
+
+          {/* CONSTRUCTION */}
+
+          <Route
+            path="/services/construction"
+            element={<Construction />}
+          />
+
+
+          {/* EMI CALCULATOR */}
+
+          <Route
+            path="/services/emi-calculator"
+            element={<EMICalculator />}
+          />
+
+
+          {/* LEGAL SUPPORT */}
+
+          <Route
+            path="/services/legal"
+            element={<LegalLoanSupport />}
+          />
+
+
+          {/* PROPERTY VALUATION */}
+
+          <Route
+            path="/services/valuation"
+            element={<PropertyValuation />}
+          />
+
+
+          {/* ABOUT */}
+
+          <Route
+            path="/about"
+            element={<About />}
+          />
+
+
+          {/* CONTACT */}
+
+          <Route
+            path="/contact"
+            element={<Contact />}
+          />
+
+
+          {/* BLOGS */}
+
+          <Route
+            path="/blogs"
+            element={<Blogs />}
+          />
+
+          <Route
+            path="/blog"
+            element={<Blogs />}
+          />
+
+          <Route
+            path="/resources"
+            element={<Blogs />}
+          />
+
+
+          {/* BUILDER LOUNGE */}
+
+          <Route
+            path="/builder-lounge"
+            element={
+              <Navigate
+                to="/#builder-lounge"
+                replace
+              />
+            }
+          />
+
+
+          {/* CONSULTANT LOUNGE */}
+
+          <Route
+            path="/consultant-lounge"
+            element={
+              <Navigate
+                to="/#consultant-lounge"
+                replace
+              />
+            }
+          />
+
+
+          {/* PROPERTY DETAIL */}
+
+          <Route
+            path="/property/:slug"
+            element={<PropertyDetail />}
+          />
+
+        </Routes>
+      </PageWrapper>
+
+
+      {/* FOOTER */}
+
+      <Footer />
+
+
+      {/* PROPERTY MODAL */}
+
+      {selectedProperty && (
+        <PropertyModal
+          property={selectedProperty}
+          onClose={() => setSelectedProperty(null)}
+        />
+      )}
+
+
+      {/* AUTH MODAL */}
+
+      {showAuthModal && (
+        <AuthModal
+          onClose={() => setShowAuthModal(false)}
+          onLoginSuccess={handleLoginSuccess}
+        />
+      )}
+
+
+      {/* POST PROPERTY MODAL */}
+
+      {showPostModal && (
+        <PostPropertyModal
+          onClose={() => setShowPostModal(false)}
+          userPhone={userPhone}
+          initialType={postType}
+        />
+      )}
+
+
+      {/* GLOBAL KSR ADVISOR */}
+
+      <KSRAdvisor />
+
+    </div>
+  );
+}
+
+
+/* =========================================================
+   APP CONTENT
+========================================================= */
+
+function AppContent() {
+  const location = useLocation();
+
+  // ADMIN PAGE CHECK
+  const isAdminPage = location.pathname.startsWith("/admin");
 
   return (
     <>
       <ScrollToHash />
 
-      <div className="app-container">
+      {/* ADMIN PAGE - NO HEADER / FOOTER */}
 
-        {/* =================================================
-            HEADER
-        ================================================= */}
+      {isAdminPage ? (
+        <Routes>
 
-        <Header
-          isLoggedIn={isLoggedIn}
-          userPhone={userPhone}
-          onLogout={handleLogout}
-          onOpenAuth={() => setShowAuthModal(true)}
-          onOpenPost={(type) => {
-            setPostType(type);
-
-            if (isLoggedIn) {
-              setShowPostModal(true);
-            } else {
-              setShowAuthModal(true);
-            }
-          }}
-        />
-
-        {/* =================================================
-            PAGES
-        ================================================= */}
-
-        <PageWrapper>
-          <Routes>
-
-            {/* =================================================
-                HOME
-            ================================================= */}
-
-            <Route
-              path="/"
-              element={
-                <Home
-                  onOpenProperty={setSelectedProperty}
-                />
-              }
-            />
-
-            {/* =================================================
-                SEARCH
-            ================================================= */}
-
-            <Route
-              path="/search"
-              element={
-                <Search
-                  onOpenProperty={setSelectedProperty}
-                />
-              }
-            />
-
-            {/* =================================================
-                PROPERTY SEARCH
-            ================================================= */}
-
-            <Route
-              path="/property"
-              element={
-                <Search
-                  onOpenProperty={setSelectedProperty}
-                />
-              }
-            />
-
-            {/* =================================================
-                CONSTRUCTION SERVICE
-            ================================================= */}
-
-            <Route
-              path="/services/construction"
-              element={<Construction />}
-            />
-
-
-        {/* EMI CALCULATOR */}
-        <Route
-        
-          path="/services/emi-calculator"
-          element={<EMICalculator />}
-        />
-
-      
-            {/* =================================================
-                LEGAL / LOAN SUPPORT
-            ================================================= */}
-            
-            <Route
-              path="/services/legal"
-              element={<LegalLoanSupport />}
-            />
-
-            {/* =================================================
-                PROPERTY VALUATION
-            ================================================= */}
-
-            <Route
-              path="/services/valuation"
-              element={<PropertyValuation />}
-            />
-
-            {/* =================================================
-                ABOUT
-            ================================================= */}
-
-            <Route
-              path="/about"
-              element={<About />}
-            />
-
-            {/* =================================================
-                CONTACT
-            ================================================= */}
-
-            <Route
-              path="/contact"
-              element={<Contact />}
-            />
-
-            {/* =================================================
-                BLOGS
-            ================================================= */}
-
-            <Route
-              path="/blogs"
-              element={<Blogs />}
-            />
-
-            <Route
-              path="/blog"
-              element={<Blogs />}
-            />
-
-            <Route
-              path="/resources"
-              element={<Blogs />}
-            />
-
-            {/* =================================================
-                BUILDER LOUNGE
-            ================================================= */}
-
-            <Route
-              path="/builder-lounge"
-              element={
-                <Navigate
-                  to="/#builder-lounge"
-                  replace
-                />
-              }
-            />
-
-            {/* =================================================
-                CONSULTANT LOUNGE
-            ================================================= */}
-
-            <Route
-              path="/consultant-lounge"
-              element={
-                <Navigate
-                  to="/#consultant-lounge"
-                  replace
-                />
-              }
-            />
-
-            {/* =================================================
-                PROPERTY DETAIL
-            ================================================= */}
-
-            <Route
-              path="/property/:slug"
-              element={<PropertyDetail />}
-            />
-
-          </Routes>
-        </PageWrapper>
-
-        {/* =================================================
-            FOOTER
-        ================================================= */}
-
-        <Footer />
-
-        {/* =================================================
-            PROPERTY MODAL
-        ================================================= */}
-
-        {selectedProperty && (
-          <PropertyModal
-            property={selectedProperty}
-            onClose={() => setSelectedProperty(null)}
+          <Route
+            path="/admin"
+            element={<Admin />}
           />
-        )}
 
-        {/* =================================================
-            AUTH MODAL
-        ================================================= */}
+        </Routes>
+      ) : (
+        <WebsiteLayout />
+      )}
+    </>
+  );
+}
 
-        {showAuthModal && (
-          <AuthModal
-            onClose={() => setShowAuthModal(false)}
-            onLoginSuccess={handleLoginSuccess}
-          />
-        )}
 
-        {/* =================================================
-            POST PROPERTY MODAL
-        ================================================= */}
+/* =========================================================
+   MAIN APP
+========================================================= */
 
-        {showPostModal && (
-          <PostPropertyModal
-            onClose={() => setShowPostModal(false)}
-            userPhone={userPhone}
-            initialType={postType}
-          />
-        )}
-
-    
-
-{/* ================================
-    GLOBAL KSR ADVISOR
-================================ */}
-
-<KSRAdvisor />
-
-      </div>
-
+export default function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
+  );
+}
       {/* =====================================================
           GLOBAL APP CSS
       ===================================================== */}
